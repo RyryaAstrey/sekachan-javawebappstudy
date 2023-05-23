@@ -7,7 +7,7 @@ import javax.servlet.annotation.*;
 @WebServlet("/register4")
 public class RegisterServlet4 extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res)
-        throws IOException, ServletException {
+            throws IOException, ServletException {
         req.setCharacterEncoding("utf-8");
 
         String name = req.getParameter("name");
@@ -22,11 +22,12 @@ public class RegisterServlet4 extends HttpServlet {
 
         req.setAttribute("rb", rb);
 
-        RequestDispatcher rb = req.getRequestDispatcher("/register4.jsp");
-        rb.forward(req, res);
+        RequestDispatcher rd = req.getRequestDispatcher("/register4.jsp");
+        rd.forward(req, res);
     }
+
     public void doGet(HttpServletRequest req, HttpServletResponse res)
-        throws IOException, ServletException {
+            throws IOException, ServletException {
         doPost(req, res);
     }
 }
